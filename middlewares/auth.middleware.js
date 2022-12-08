@@ -5,7 +5,7 @@ import config from '../config/index.js'
 import User from '../models/user.js'
 
 export const isLoggedIn = asyncHandler(async (req, _res, next) => {
-    const token = req.cookies
+    const token = req.cookies.token
     if (!token) {
         throw new CustomError('Not authorized to access this route', 401)
     }
